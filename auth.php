@@ -14,16 +14,16 @@
 
 class auth{
 	// CHANGE THESE VALUES TO REFLECT YOUR SERVER'S SETTINGS
-	var $HOST = "localhost";	// Change this to the proper DB HOST
-	var $USERNAME = "root";	// Change this to the proper DB USERNAME
-	var $PASSWORD = "";	// Change this to the proper DB USER PASSWORD
-	var $DBNAME = "test-auth";	// Change this to the proper DB NAME
+	public $HOST = "localhost";	// Change this to the proper DB HOST
+	public $USERNAME = "root";	// Change this to the proper DB USERNAME
+	public $PASSWORD = "";	// Change this to the proper DB USER PASSWORD
+	public $DBNAME = "test-auth";	// Change this to the proper DB NAME
 
 	// AUTHENTICATE
 	function authenticate($username, $password) {
 		$query = "SELECT * FROM authuser WHERE uname='$username' AND passwd=MD5('$password') AND status <> 'inactive'";
 
-        $UpdateRecords = "UPDATE authuser SET lastlogin = NOW(), logincount = logincount + 1 WHERE uname='$username'";
+    $UpdateRecords = "UPDATE authuser SET lastlogin = NOW(), logincount = logincount + 1 WHERE uname='$username'";
 		$connection = mysqli_connect($this->HOST, $this->USERNAME, $this->PASSWORD);
 
 		$SelectedDB = mysqli_select_db($this->DBNAME);

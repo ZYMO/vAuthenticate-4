@@ -16,7 +16,7 @@
 	setcookie ("USERNAME", "");
 	setcookie ("PASSWORD", "");
 	include_once ("authconfig.php");
-	
+
 ?>
 
 <html>
@@ -27,4 +27,4 @@
 
 <body bgcolor="#FFFFFF" text="#000000">
 <p><font face="Arial, Helvetica, sans-serif" size="5"><b>You have successfully logged off.</b></font></p>
-<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Click <a href="<? echo $login; ?>">here</a> to re-login.</b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Click <a href="<?php echo $login; ?>">here</a> to re-login.</b></font></p>

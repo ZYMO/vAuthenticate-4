@@ -24,14 +24,14 @@ $failure = "failed.php";	// THIS IS THE PAGE TO BE SHOWN IF USERNAME-PASSWORD CO
 // example: $_SERVER['HTTP_HOST'] will have to be www.yourdomain.com
 // For IP-based systems, this will replace the IP address
 // example: $_SERVER['HTTP_HOST'] will have to be 66.199.47.5
-$changepassword = "http://" . $_SERVER['HTTP_HOST'] . "/Scripts/vAuthenticate/chgpwd.php"; // Path to change password file
-$login = "http://" . $_SERVER['HTTP_HOST'] . "/Scripts/vAuthenticate/login.php"; // Path to page with the login box
-$logout = "http://" . $_SERVER['HTTP_HOST'] . "/Scripts/vAuthenticate/logout.php"; // Path to logout page
+$changepassword = "http://" . $_SERVER['HTTP_HOST'] . "/chgpwd.php"; // Path to change password file
+$login = "http://" . $_SERVER['HTTP_HOST'] . "/login.php"; // Path to page with the login box
+$logout = "http://" . $_SERVER['HTTP_HOST'] . "/logout.php"; // Path to logout page
 
 // DB SETTINGS
 $dbhost = "localhost";	// Change this to the proper DB Host name
 $dbusername = "root"; 	// Change this to the proper DB User
-$dbpass = "";	// Change this to the proper DB User password
+$dbpass = "password";	// Change this to the proper DB User password
 $dbname	= "test-auth"; 	// Change this to the proper DB Name
 
 ?>

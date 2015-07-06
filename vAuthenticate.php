@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
 # File: vAuthenticate.php
@@ -25,7 +25,7 @@
 
     // Change the path to auth.php and authconfig.php if you moved
     // vAuthenticate.php from its original directory.
-  	include_once ("auth.php");
+  include_once ("auth.php");
 	include_once ("authconfig.php");
 
     $username =  $_POST['username'];
