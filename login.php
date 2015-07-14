@@ -29,22 +29,24 @@
   <table width="40%" border="1" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="2" bgcolor="#FFFFCC" valign="middle">
-        <div align="center"><b>vAuthenticate</b></div>
-    </td>
-  </tr>
+        <div align="center">vAuthenticate</div>
+      </td>
+    </tr>
     <tr>
-      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b>&nbsp;Username</b></td>
-      <td width="68%" valign="middle"><b>
-        &nbsp;<label>
-                  <input type="text" name="username" size="15" maxlength="15">
-              </label></b></td>
-  </tr>
+      <td bgcolor="#CCCCCC" valign="middle">
+        <label>
+            Username
+            <input type="text" name="username" size="15" maxlength="15">
+        </label>
+      </td>
+    </tr>
     <tr>
-      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b>&nbsp;Password</b></td>
-      <td width="68%" valign="middle"><b>&nbsp;<label>
-
-                  <input type="password" name="password" size="15" maxlength="15">
-              </label></b></td>
+      <td bgcolor="#CCCCCC" valign="middle">
+        <label>
+            Password
+            <input type="password" name="password" size="15" maxlength="15">
+        </label>
+      </td>
   </tr>
     <tr valign="middle" bgcolor="#CCCCCC">
       <td colspan="2">
