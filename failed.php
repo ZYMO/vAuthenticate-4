@@ -26,4 +26,3 @@
 	The username and password does not match with the ones in the database.
 	<br>
 	Please go back and login again. Thank you.
-

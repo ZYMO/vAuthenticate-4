@@ -28,7 +28,7 @@
 
 		exit; // End program execution. This will disable continuation of processing the rest of the page.
 	}
-  
+
 ?>
 
 <html>

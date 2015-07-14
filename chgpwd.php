@@ -31,28 +31,28 @@
       <td width="100%" bgcolor="#C0C0C0" colspan="2">&nbsp;</td>
     </tr>
     <tr>
-      <td width="34%" bgcolor="#C0C0C0">
-				<b>&nbsp; Old Password:</b></td>
-      <td width="66%" bgcolor="#C0C0C0">
+      <td  bgcolor="#C0C0C0">
           <label>
+						 Old Password:
               <input type="password" name="oldpasswd" size="25">
-          </label></td>
+          </label>
+				</td>
     </tr>
     <tr>
-      <td width="34%" bgcolor="#C0C0C0">
-				<b>&nbsp; New Password:</b></td>
-      <td width="66%" bgcolor="#C0C0C0">
+      <td bgcolor="#C0C0C0">
+
           <label>
+						 New Password:
               <input type="password" name="newpasswd" size="25">
           </label></td>
     </tr>
     <tr>
-      <td width="34%" bgcolor="#C0C0C0">
-				<b>&nbsp; Confirm:</b></td>
-      <td width="66%" bgcolor="#C0C0C0">
+      <td bgcolor="#C0C0C0">
           <label>
+						Confirm:
               <input type="password" name="confirmpasswd" size="25">
-          </label></td>
+          </label>
+				</td>
     </tr>
     <tr>
       <td width="100%" colspan="2" bgcolor="#C0C0C0">&nbsp; </td>

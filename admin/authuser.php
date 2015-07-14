@@ -239,10 +239,10 @@ if ($action == "Add New") {
               </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b>Team</b></td>
-            <td width="73%">&nbsp;
-				<label>
-					<select name="team">
+            <td bgcolor="#33CCFF">
+							<label>
+								Team
+								<select name="team">
 
 						<?php
 
@@ -275,9 +275,9 @@ if ($action == "Add New") {
               </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b>Status</b></td>
-            <td width="73%">&nbsp;
+            <td bgcolor="#33CCFF">        
 				<label>
+					Status
 					<select name="status">
 
 						<?php
