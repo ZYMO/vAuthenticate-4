@@ -12,37 +12,39 @@
 #
 */
 
+    include_once ("authconfig.php");
+
 ?>
-<?php include_once ("authconfig.php"); ?>
 <html>
 <head>
-<title>User Login</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>User Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000">
-<p><font face="Arial, Helvetica, sans-serif" size="5"><b>Login</b></font></p>
+
+<p><b>Login</b></p>
 
 <form name="Sample" method="post" action="<?php print $resultpage ?>">
-  <table width="40%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+  <table width="40%" border="1" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="2" bgcolor="#FFFFCC" valign="middle">
-        <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b>vAuthenticate</b></font></div>
+        <div align="center"><b>vAuthenticate</b></div>
     </td>
   </tr>
     <tr>
-      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;Username</font></b></td>
-      <td width="68%" valign="middle"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-        &nbsp;
-<input type="text" name="username" size="15" maxlength="15">
-        </font></b></td>
+      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b>&nbsp;Username</b></td>
+      <td width="68%" valign="middle"><b>
+        &nbsp;<label>
+                  <input type="text" name="username" size="15" maxlength="15">
+              </label></b></td>
   </tr>
     <tr>
-      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;Password</font></b></td>
-      <td width="68%" valign="middle"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-        &nbsp;
-<input type="password" name="password" size="15" maxlength="15">
-        </font></b></td>
+      <td width="32%" bgcolor="#CCCCCC" valign="middle"><b>&nbsp;Password</b></td>
+      <td width="68%" valign="middle"><b>&nbsp;<label>
+
+                  <input type="password" name="password" size="15" maxlength="15">
+              </label></b></td>
   </tr>
     <tr valign="middle" bgcolor="#CCCCCC">
       <td colspan="2">
@@ -56,5 +58,6 @@
 </form>
 
 <p>&nbsp;</p>
+
 </body>
 </html>

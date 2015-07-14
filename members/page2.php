@@ -18,7 +18,6 @@
 ?>
 <head><title>Sample Page</title></head>
 <body bgcolor="#FFFFFF">
-<font color="#000066"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="3">If
-you can see this, you have logged in successfully a while ago and you're trying
+<b>If you can see this, you have logged in successfully a while ago and you're trying
 to access this page via direct method. You will continue to
-be able to directly access files until you close all browsers.</font></b></font>
+be able to directly access files until you close all browsers.</b>

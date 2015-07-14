@@ -17,12 +17,14 @@
 	include_once ("check.php");
 ?>
 
-<head><title>Change Password</title></head>
+<head>
+	<title>Change Password</title>
+</head>
 <body bgcolor="#FFFFFF">
 
-<p align="center"><b><font face="Arial">Change Password</font></b></p>
+<p align="center"><b>Change Password</b></p>
 <div align="center">
-  <center>
+
   <form method="POST" action="chgpwd.php">
   <table border="0" cellpadding="0" cellspacing="0" width="40%">
     <tr>
@@ -30,21 +32,27 @@
     </tr>
     <tr>
       <td width="34%" bgcolor="#C0C0C0">
-				<b><font size="2" face="Arial">&nbsp; Old Password:</font></b></td>
+				<b>&nbsp; Old Password:</b></td>
       <td width="66%" bgcolor="#C0C0C0">
-      <input type="password" name="oldpasswd" size="25"></td>
+          <label>
+              <input type="password" name="oldpasswd" size="25">
+          </label></td>
     </tr>
     <tr>
       <td width="34%" bgcolor="#C0C0C0">
-				<b><font size="2" face="Arial">&nbsp; New Password:</font></b></td>
+				<b>&nbsp; New Password:</b></td>
       <td width="66%" bgcolor="#C0C0C0">
-      <input type="password" name="newpasswd" size="25"></td>
+          <label>
+              <input type="password" name="newpasswd" size="25">
+          </label></td>
     </tr>
     <tr>
       <td width="34%" bgcolor="#C0C0C0">
-				<b><font size="2" face="Arial">&nbsp; Confirm:</font></b></td>
+				<b>&nbsp; Confirm:</b></td>
       <td width="66%" bgcolor="#C0C0C0">
-      <input type="password" name="confirmpasswd" size="25"></td>
+          <label>
+              <input type="password" name="confirmpasswd" size="25">
+          </label></td>
     </tr>
     <tr>
       <td width="100%" colspan="2" bgcolor="#C0C0C0">&nbsp; </td>
@@ -60,7 +68,7 @@
     </tr>
   </table>
   </form>
-  </center>
+
 </div>
 
 <?php
@@ -93,9 +101,9 @@
 		if ($oldpasswd != $PASSWORD)
 		{
 			print "<p align=\"center\">";
-			print "	<font face=\"Arial\" color=\"#FF0000\">";
+
 			print "		<b>Old password is wrong!</b>";
-			print "	</font>";
+
 			print "</p>";
 			exit;
 		}
@@ -104,9 +112,9 @@
 		if (trim($newpasswd) == "")
 		{
 			print "<p align=\"center\">";
-			print "	<font face=\"Arial\" color=\"#FF0000\">";
+
 			print "		<b>New password cannot be blank!</b>";
-			print "	</font>";
+
 			print "</p>";
 			exit;
 		}
@@ -115,9 +123,9 @@
 		if ($newpasswd != $confirmpasswd)
 		{
 			print "<p align=\"center\">";
-			print "	<font face=\"Arial\" color=\"#FF0000\">";
+
 			print "		<b>New password was not confirmed!</b>";
-			print "	</font>";
+
 			print "</p>";
 			exit;
 		}
@@ -126,15 +134,15 @@
 		$update = $user->modify_user($USERNAME, $newpasswd, $check["team"], $check["level"], $check["status"]);
 		if ($update) {
 			print "<p align=\"center\">";
-			print "	<font face=\"Arial\" color=\"#FF0000\">";
+
 			print "		<b>Password Changed!</b><br>";
 			print "		You will be required to re-login so that your session will recognize the new password. <BR>";
 			print "		Click <a href=\"$login\">here</a> to login again.";
-			print "	</font>";
+
 			print "</p>";
 		}
 
-	}	// end - new password field is not empty
+	}	// end - new password field is not empty // DEBUG Line 132 : $login EXTERNAL_FRAGMENT //
 
 ?>
 

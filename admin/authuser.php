@@ -20,11 +20,11 @@
 	{
 		// Feel free to change the error message below. Just make sure you put a "\" before
 		// any double quote.
-		print "<font face=\"Arial, Helvetica, sans-serif\" size=\"5\" color=\"#FF0000\">";
+
 		print "<b>Illegal Access</b>";
-		print "</font><br>";
-  	print "<font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"2\" color=\"#000000\">";
-		print "<b>You do not have permission to view this page.</b></font>";
+		print "<br>";
+
+		print "<b>You do not have permission to view this page.</b>";
 
 		exit; // End program execution. This will disable continuation of processing the rest of the page.
 	}
@@ -179,21 +179,21 @@ if ($action == "Add New") {
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000">
-<p><font face="Arial, Helvetica, sans-serif" size="5"><b>vAuthenticate Administration
-  - Users</b></font></p>
-<table width="75%" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+<p><b>vAuthenticate Administration
+  - Users</b></p>
+<table width="75%" border="1" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="20%" bgcolor="#0099CC" height="16"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFCC">Administer</font></b></td>
+    <td width="20%" bgcolor="#0099CC" height="16"><b>Administer</b></td>
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="index.php">Home</a></font></div>
+      <div align="center"><a href="index.php">Home</a></div>
     </td>
 
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="authgroup.php">Groups</a></font></div>
+      <div align="center"><a href="authgroup.php">Groups</a></div>
     </td>
 
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="<? echo $logout; ?>">Logout</a></font></div>
+      <div align="center"><a href="<? echo $logout; ?>">Logout</a></div>
     </td>
   </tr>
 </table><br>&nbsp;
@@ -202,48 +202,49 @@ if ($action == "Add New") {
     <td width="50%">
 
 	  <form name="AddUser" method="Post" action="authuser.php">
-	    <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#000000">
+	    <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center">
           <tr bgcolor="#000000">
             <td colspan="2">
-              <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3" color="#FFFFCC"><b>USER
-                DETAILS</b></font></div>
+              <div align="center"><b>USER
+                DETAILS</b></div>
             </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Username</font></b></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;
+            <td width="27%" bgcolor="#33CCFF"><b>Username</b></td>
+            <td width="73%">&nbsp;
 
 <?php
 
 			  	if (($action == "Modify") || ($action=="Add") || ($act=="Edit")) {
 					print "<input type=\"hidden\" name=\"username\" value=\"$username\">";
-					print "<font face=\"Verdana, Arial, Helvetica, sans-serif\" color=\"#006666\" size=\"2\">$username</font>";
+					print "$username";
 				}
 				else {
 					print "<input type=\"text\" name=\"username\" size=\"15\" maxlength=\"15\" value=\"$username\">";
 				}
 
 ?>
-              </font></td>
+              </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Password</font></b></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;
+            <td width="27%" bgcolor="#33CCFF"><b>Password</b></td>
+            <td width="73%">&nbsp;
               <? print "<input type=\"password\" name=\"password\" size=\"20\" maxlength=\"15\" value=\"$password\">"; ?>
-              </font></td>
+              </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">&nbsp;</font></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000099">&nbsp;&nbsp;Leave
+            <td width="27%" bgcolor="#33CCFF">&nbsp;</td>
+            <td width="73%">&nbsp;&nbsp;Leave
               the password field blank if you want to retain the old password.
-              </font></td>
+              </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Team</font></b></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;
-              <select name="team">
+            <td width="27%" bgcolor="#33CCFF"><b>Team</b></td>
+            <td width="73%">&nbsp;
+				<label>
+					<select name="team">
 
-<?php
+						<?php
 
 			  	// DISPLAY TEAMS
 			  	$row = mysqli_fetch_array($listteams);
@@ -252,48 +253,59 @@ if ($action == "Add New") {
 
 					if ($team == $teamlist) {
 						print "<option value=\"$teamlist\" SELECTED>" . $row["teamname"] . "</option>";
-					}
-					else {
-						print "<option value=\"$teamlist\">" . $row["teamname"] . "</option>";
-					}
-					$row = mysqli_fetch_array($listteams);
-				}
+						}
+						else {
+						print "
+						<option value=\"$teamlist\">" . $row["teamname"] . "</option>
+						";
+						}
+						$row = mysqli_fetch_array($listteams);
+						}
 
-?>
+						?>
 
-              </select>
-              <a href="authgroup.php">Add</a></font></td>
+					</select>
+				</label>
+				<a href="authgroup.php">Add</a></td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Level</font></b></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;
+            <td width="27%" bgcolor="#33CCFF"><b>Level</b></td>
+            <td width="73%">&nbsp;
               <?php print "<input type=\"text\" name=\"level\" size=\"4\" maxlength=\"4\" value=\"$level\">"; ?>
-              </font></td>
+              </td>
           </tr>
           <tr valign="middle">
-            <td width="27%" bgcolor="#33CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Status</font></b></td>
-            <td width="73%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;
-              <select name="status">
+            <td width="27%" bgcolor="#33CCFF"><b>Status</b></td>
+            <td width="73%">&nbsp;
+				<label>
+					<select name="status">
 
-<?php
+						<?php
 
 			  	// ACTIVE / INACTIVE
 				if ($status == "inactive") {
 					print "<option value=\"active\">Active</option>";
-                	print "<option value=\"inactive\" selected>Inactive</option>";
-				}
-				else {
-					print "<option value=\"active\" selected>Active</option>";
-                	print "<option value=\"inactive\">Inactive</option>";
-				}
+						print "
+						<option value=\"inactive\" selected>Inactive</option>
+						";
+						}
+						else {
+						print "
+						<option value=\"active\" selected>Active</option>
+						";
+						print "
+						<option value=\"inactive\">Inactive</option>
+						";
+						}
 
-?>
-              </select>
-              </font></td>
+						?>
+					</select>
+				</label>
+			</td>
           </tr>
           <tr bgcolor="#CCCCCC" valign="middle">
             <td colspan="2">
-              <div align="center"><font size="2"><font size="2"><font size="2"><font face="Verdana, Arial, Helvetica, sans-serif">
+              <div align="center">
 
 <?php
 
@@ -308,7 +320,7 @@ if ($action == "Add New") {
 
 ?>
                 <input type="reset" name="Reset" value="Clear">
-                </font></font></font></font></div>
+                </div>
             </td>
           </tr>
         </table>
@@ -316,12 +328,12 @@ if ($action == "Add New") {
 
 
       <p>&nbsp;</p>
-      <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#000000">
+      <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center">
         <tr>
-          <td bgcolor="#990000"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFCC">Message:</font></b></td>
+          <td bgcolor="#990000"><b>Message:</b></td>
         </tr>
         <tr>
-          <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#0000FF">
+          <td>
 
 <?php
 
@@ -333,7 +345,7 @@ if ($action == "Add New") {
 			}
 
 ?>
-		  </font></td>
+		  </td>
         </tr>
       </table>
       <p>&nbsp;</p>
@@ -341,28 +353,28 @@ if ($action == "Add New") {
     <td width="50%">
 
 
-	  <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#000000">
+	  <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center">
         <tr bgcolor="#000000">
           <td colspan="5">
-            <div align="center"><font size="3" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFCC"><b>USER
-              LIST</b></font></div>
+            <div align="center"><b>USER
+              LIST</b></div>
           </td>
         </tr>
         <tr bgcolor="#CCCCCC">
           <td width="20%">
-            <div align="center"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">Username</font></b></font></div>
+            <div align="center"><b>Username</b></div>
           </td>
           <td width="25%">
-            <div align="center"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">Group</font></b></font></div>
+            <div align="center"><b>Group</b></div>
           </td>
           <td width="15%">
-            <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><b>Status</b></font></div>
+            <div align="center"><b>Status</b></div>
           </td>
           <td width="30%">
-            <div align="center"><font size="1"><b><font face="Verdana, Arial, Helvetica, sans-serif">Last Login</font></b></font></div>
+            <div align="center"><b>Last Login</b></div>
           </td>
           <td width="10%">
-            <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><b>Count</b></font></div>
+            <div align="center"><b>Count</b></div>
           </td>
         </tr>
 
@@ -379,23 +391,23 @@ if ($action == "Add New") {
 	while ($row) {
 		print "<tr>";
         print "  <td width=\"20%\">";
-        print "    <div align=\"left\"><font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"1\">";
+        print "    <div align=\"left\">";
 		print "		<a href=\"authuser.php?act=Edit&username=".$row['uname']."\">";
 		print 		$row['uname'];
 		print "		</a>";
-		print "	   </font></div>";
+		print "	   </div>";
         print "  </td>";
         print "  <td width=\"25%\">";
-        print "    <div align=\"center\"><font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"1\">".$row['team']."</font></div>";
+        print "    <div align=\"center\">".$row['team']."</div>";
         print "  </td>";
         print "  <td width=\"15%\">";
-        print "    <div align=\"center\"><font size=\"1\" face=\"Verdana, Arial, Helvetica, sans-serif\">".($row['status'])."</font></div>";
+        print "    <div align=\"center\">".($row['status'])."</div>";
         print "  </td>";
         print "  <td width=\"30%\">";
-        print "    <div align=\"center\"><font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"1\">".$row['lastlogin']."</font></div>";
+        print "    <div align=\"center\">".$row['lastlogin']."</div>";
         print "  </td>";
         print "  <td width=\"10%\">";
-        print "    <div align=\"right\"><font size=\"1\" face=\"Verdana, Arial, Helvetica, sans-serif\">".($row['logincount'])."</font></div>";
+        print "    <div align=\"right\">".($row['logincount'])."</div>";
         print "  </td>";
         print "</tr>";
 

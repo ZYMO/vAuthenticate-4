@@ -32,17 +32,15 @@
 	{
 		// Feel free to change the error message below. Just make sure you put a "\" before
 		// any double quote.
-		print "<font face=\"Arial, Helvetica, sans-serif\" size=\"5\" color=\"#FF0000\">";
+
 		print "<b>Illegal Access</b>";
-		print "</font><br>";
-  		print "<font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"2\" color=\"#000000\">";
-		print "<b>You do not have permission to view this page.</b></font>";
+		print "<br>";
+		print "<b>You do not have permission to view this page.</b>";
 
 		// REDIRECT BACK TO LOGIN PAGE
         // REMOVE BLOCK IF NOT BEING USED
 		   print "<br>";
-           print "<font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"1\" color=\"#000000\">";
-		   print "You will be redirected back to the login page in a short while.</font>";
+		   print "You will be redirected back to the login page in a short while.";
 
 ?>
               <HEAD>

@@ -21,11 +21,10 @@
 	{
 		// Feel free to change the error message below. Just make sure you put a "\" before
 		// any double quote.
-		print "<font face=\"Arial, Helvetica, sans-serif\" size=\"5\" color=\"#FF0000\">";
+
 		print "<b>Illegal Access</b>";
-		print "</font><br>";
-  		print "<font face=\"Verdana, Arial, Helvetica, sans-serif\" size=\"2\" color=\"#000000\">";
-		print "<b>You do not have permission to view this page.</b></font>";
+		print "<br>";
+		print "<b>You do not have permission to view this page.</b>";
 
 		exit; // End program execution. This will disable continuation of processing the rest of the page.
 	}
@@ -34,25 +33,25 @@
 
 <html>
 <head>
-<title>vAuthenticate Administrative Interface</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>vAuthenticate Administrative Interface</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000">
-<p><font face="Arial, Helvetica, sans-serif" size="5"><b>vAuthenticate Administration</b></font></p>
-<table width="75%" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+<p><b>vAuthenticate Administration</b></p>
+<table width="75%" border="1" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="20%" bgcolor="#0099CC" height="16"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFCC">Administer</font></b></td>
+    <td width="20%" bgcolor="#0099CC" height="16"><b>Administer</b></td>
 
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="authuser.php">Users</a></font></div>
+      <div align="center"><a href="authuser.php">Users</a></div>
     </td>
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="authgroup.php">Groups</a></font></div>
+      <div align="center"><a href="authgroup.php">Groups</a></div>
     </td>
 
     <td width="16%" bgcolor="#FFFFCC" height="16">
-      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="<? echo $logout; ?>">Logout</a></font></div>
+      <div align="center"><a href="<? echo $logout; ?>">Logout</a></div>
     </td>
   </tr>
 </table>
@@ -63,25 +62,25 @@
     </td>
   </tr>
   <tr>
-    <td valign="middle"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Welcome
+    <td valign="middle">Welcome
       to the administration panel of vAuthenticate! Please click on any of the
       five (5) administrative functions above. Below is a description of each
-      function:</font>
+      function:
 
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<b>Settings</b> - Control site-wide signup and security settings.</font></p>
+<p>
+<b>Settings</b> - Control site-wide signup and security settings.</p>
 
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<b>Users</b> - Add, modify, activate/inactivate, delete, and group users.</font></p>
+<p>
+<b>Users</b> - Add, modify, activate/inactivate, delete, and group users.</p>
 
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<b>Groups</b> - Create, modify, activate/inactivate, and delete groups.</font></p>
+<p>
+<b>Groups</b> - Create, modify, activate/inactivate, and delete groups.</p>
 
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<b>Emailer</b> - Customize profiles for the types of email to be sent for notification.</font></p>
+<p>
+<b>Emailer</b> - Customize profiles for the types of email to be sent for notification.</p>
 
-<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<b>Logout</b> - End the current session.</font></p>
+<p>
+<b>Logout</b> - End the current session.</p>
 
 
     </td>
